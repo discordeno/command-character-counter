@@ -8,7 +8,10 @@ export function processCommandCalculations(commands: Command[]) {
     amounts.push({ name: command.name, characters });
   }
 
-  console.table(amounts.sort((a, b) => b.characters - a.characters), ["name", "characters"]);
+  // Sort the commands by the highest to lowest
+  const sorted = amounts.sort((a, b) => b.characters - a.characters);
+  // Return the sorted characters
+  return sorted;
 }
 
 function calculateCharacters(command: Command) {
